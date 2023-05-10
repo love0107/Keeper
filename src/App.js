@@ -1,13 +1,18 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Note from "./components/Note";
-import Contect from "./components/contects/Contects";
+import notes from "./notes"
+import Note from "./components/Note"
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Note />
-      <Contect />
+      {notes.map(noteItem => (
+        <Note
+          key={noteItem.key}
+          title={noteItem.title}
+          content={noteItem.content}
+        />
+      ))}
       <Footer />
     </div>
   );
